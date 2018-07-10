@@ -1,25 +1,32 @@
 import React, { Component } from 'react'
-import Button from '@material-ui/core/Button'
-import logo from './logo.svg'
-import './App.css'
+import './App.styl'
+import Home from 'pages/home/home'
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+// import purple from '@material-ui/core/colors/purple';
+import green from '@material-ui/core/colors/green';
+import red from '@material-ui/core/colors/red';
 
+// const primary = red[500]; // #F44336
+const primary = red[700]; // #d33a31
+
+const theme = createMuiTheme({
+  palette: {
+    primary: red,
+    secondary: green,
+  },
+  status: {
+    danger: 'orange',
+  },
+});
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <Button className="button" variant="contained" color="primary">
-          Hello World
-        </Button>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+      <MuiThemeProvider theme={theme}>
+        <Home />
+      </MuiThemeProvider>
+    )
   }
 }
 
 export default App
+
