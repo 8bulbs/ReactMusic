@@ -1,0 +1,11 @@
+.section-root {
+  margin: 17px 0 17px;
+  padding-left: 10px;
+  text-align: left;
+  border-left: 2px solid #d33a31;
+  font-size: 17px;
+  font-weight: 400;
+  height: 20px;
+  line-height: 21px;
+  color: #333;
+}

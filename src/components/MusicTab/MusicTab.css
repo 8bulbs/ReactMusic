@@ -1,5 +1,7 @@
 .music-tab-root {
-  width: 375px
+  width: 375px;
+  position: fixed;
+  top: 57px;
 }
 .music-tab{
   color: #333 !important;
