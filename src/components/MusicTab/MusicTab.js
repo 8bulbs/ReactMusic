@@ -11,7 +11,7 @@ import SongList from 'pages/songList/songList'
 import Recommend from 'pages/recommend/recommend'
 import SingerList from 'pages/singerList/singerList'
 import Search from 'pages/search/search'
-const primary = red[700]
+import './MusicTab.css'
 
 function TabContainer({ children, dir }) {
   return (
@@ -50,7 +50,7 @@ class FullWidthTabs extends React.Component {
     const { classes, theme } = this.props;
 
     return (
-      <div className={classes.root}>
+      <div className="music-tab-root">
         <AppBar position="static" color="default">
           <Tabs
             value={this.state.value}
@@ -59,16 +59,17 @@ class FullWidthTabs extends React.Component {
             textColor="primary"
             fullWidth
           >
-            <Tab label="推荐" />
-            <Tab label="歌单" />
-            <Tab label="歌手" />
-            <Tab label="搜索" />
+            <Tab className="music-tab" label="推荐" />
+            <Tab className="music-tab" label="歌单" />
+            <Tab className="music-tab" label="歌手" />
+            <Tab className="music-tab" label="搜索" />
           </Tabs>
         </AppBar>
         <SwipeableViews
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
           index={this.state.value}
           onChangeIndex={this.handleChangeIndex}
+          disabled={true}
         >
           <TabContainer dir={theme.direction}>
             <Recommend />

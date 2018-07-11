@@ -49,6 +49,8 @@
     "react-dev-utils": "^5.0.0",
     "react-dom": "^16.3.0",
     "react-responsive-carousel": "^3.1.41",
+    "react-slick": "^0.23.1",
+    "react-slider-light": "^4.1.1",
     "react-swipeable-views": "^0.12.14",
     "style-loader": "0.19.0",
     "stylus": "^0.54.5",
@@ -63,8 +65,12 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "build:deploy": "node scripts/build.js",
+    "test": "node scripts/test.js --env=jsdom",
+    "clean": "rimraf dist",
+    "build": "npm run clean && npm run build:deploy",
+    "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue src/",
+    "precommit": "npm run lint-fix"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -107,5 +113,8 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "slick-carousel": "^1.8.1"
   }
 }

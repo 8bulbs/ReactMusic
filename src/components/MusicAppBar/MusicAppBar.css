@@ -2,12 +2,10 @@
 
 .app-bar-root {
   width: 375px;
-  height: 57px;
   overflow: hidden;
 }
 .app-bar {
   background-color:#d43c33 !important;
-  height: 57px;
 }
 .app-bar-tool-bar {
   justify-content: center;
@@ -21,7 +19,7 @@
 .app-bar-typography {
   color: white !important;
   font-size: 25px;
-  font-weight: 350 !important
+  font-weight: 350 !important;
 }
 
 
