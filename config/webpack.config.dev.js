@@ -1,4 +1,9 @@
-'use strict';
+const postcssAspectRatioMini = require('postcss-aspect-ratio-mini');
+const postcssPxToViewport = require('postcss-px-to-viewport');
+const postcssWriteSvg = require('postcss-write-svg');
+const postcssCssnext = require('postcss-cssnext');
+const postcssViewportUnits = require('postcss-viewport-units');
+const cssnano = require('cssnano');
 
 const autoprefixer = require('autoprefixer');
 const path = require('path');
@@ -22,18 +27,9 @@ const publicUrl = '';
 // Get environment variables to inject into our app.
 const env = getClientEnvironment(publicUrl);
 
-// 引入postcss插件
-const postcssAspectRatioMini = require('postcss-aspect-ratio-mini');
-const postcssPxToViewport = require('postcss-px-to-viewport');
-const postcssWriteSvg = require('postcss-write-svg');
-const postcssCssnext = require('postcss-cssnext');
-const postcssViewportUnits = require('postcss-viewport-units');
-const cssnano = require('cssnano');
-
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
-
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
 // The production configuration is different and lives in a separate file.
@@ -167,6 +163,19 @@ module.exports = {
               cacheDirectory: true,
             },
           },
+          // {
+          //   test: /\.js?$/,
+          //   loader: [['babel-plugin-react-css-modules',{
+          //         generateScopedName:'[name]__[local]',
+          //         filetypes: {
+          //             ".styl": "sugerss"
+          //          }
+          //    }]]
+          // },
+          // {
+          //   test: /\.module.styl$/,
+          //   loader: ['style-loader', 'css-loader', 'stylus-loader']
+          // },
           {
             test: /\.styl$/,
             loaders: ['style-loader', 'css-loader', 'stylus-loader']
@@ -183,13 +192,14 @@ module.exports = {
               {
                 loader: require.resolve('css-loader'),
                 options: {
+                  // modules: true,
                   importLoaders: 1,
+                  localIdentName: '[name]_[local]_[hash:base64:5]'
                 },
               },
               {
                 loader: require.resolve('postcss-loader'),
                 options: {
-                  sourceMap: true,
                   // Necessary for external CSS imports to work
                   // https://github.com/facebookincubator/create-react-app/issues/2677
                   ident: 'postcss',
@@ -204,23 +214,29 @@ module.exports = {
                       ],
                       flexbox: 'no-2009',
                     }),
+
                     postcssAspectRatioMini({}),
+
                     postcssPxToViewport({
-                      viewportWidth: 750, // (Number) The width of the viewport.
-                      viewportHeight: 1334, // (Number) The height of the viewport.
+                      viewportWidth: 375, // (Number) The width of the viewport.
+                      viewportHeight: 667, // (Number) The height of the viewport.
                       unitPrecision: 3, // (Number) The decimal numbers to allow the REM units to grow to.
                       viewportUnit: 'vw', // (String) Expected units.
                       selectorBlackList: ['.ignore', '.hairlines'], // (Array) The selectors to ignore and leave as px.
                       minPixelValue: 1, // (Number) Set the minimum pixel value to replace.
                       mediaQuery: false // (Boolean) Allow px to be converted in media queries.
                     }),
+
                     postcssWriteSvg({
                       utf8: false
                     }),
+
                     postcssCssnext({}),
+
                     postcssViewportUnits({}),
+
                     cssnano({
-                      // preset: "advanced",
+                      preset: "advanced",
                       autoprefixer: false,
                       "postcss-zindex": false
                     })
@@ -239,7 +255,7 @@ module.exports = {
             // its runtime that would otherwise processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/,/\.styl$/],
+            exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
             loader: require.resolve('file-loader'),
             options: {
               name: 'static/media/[name].[hash:8].[ext]',

@@ -1,4 +1,9 @@
-'use strict';
+const postcssAspectRatioMini = require('postcss-aspect-ratio-mini');
+const postcssPxToViewport = require('postcss-px-to-viewport');
+const postcssWriteSvg = require('postcss-write-svg');
+const postcssCssnext = require('postcss-cssnext');
+const postcssViewportUnits = require('postcss-viewport-units');
+const cssnano = require('cssnano');
 
 const autoprefixer = require('autoprefixer');
 const path = require('path');
@@ -28,14 +33,6 @@ const publicUrl = publicPath.slice(0, -1);
 // Get environment variables to inject into our app.
 const env = getClientEnvironment(publicUrl);
 
-// 引入postcss插件
-const postcssAspectRatioMini = require('postcss-aspect-ratio-mini');
-const postcssPxToViewport = require('postcss-px-to-viewport');
-const postcssWriteSvg = require('postcss-write-svg');
-const postcssCssnext = require('postcss-cssnext');
-const postcssViewportUnits = require('postcss-viewport-units');
-const cssnano = require('cssnano');
-
 // Assert this just to be safe.
 // Development builds of React are slow and not intended for production.
 if (env.stringified['process.env'].NODE_ENV !== '"production"') {
@@ -44,10 +41,6 @@ if (env.stringified['process.env'].NODE_ENV !== '"production"') {
 
 // Note: defined here because it will be used more than once.
 const cssFilename = 'static/css/[name].[contenthash:8].css';
-
-function resolve (dir) {
-  return path.join(__dirname, '..', dir)
-}
 
 // ExtractTextPlugin expects the build output to be flat.
 // (See https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/27)
@@ -102,14 +95,10 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
-      '@': resolve('src'),
+      
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
-      'images': resolve('src/assets/images'),
-      'pages': resolve('src/pages'),
-      'styles': resolve('src/assets/styles'),
-      'components': resolve('src/components'),
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -137,7 +126,7 @@ module.exports = {
             options: {
               formatter: eslintFormatter,
               eslintPath: require.resolve('eslint'),
-
+              
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -165,7 +154,7 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-
+              
               compact: true,
             },
           },
@@ -190,6 +179,7 @@ module.exports = {
                     loader: require.resolve('style-loader'),
                     options: {
                       hmr: false,
+                      
                     },
                   },
                   use: [
@@ -199,6 +189,8 @@ module.exports = {
                         importLoaders: 1,
                         minimize: true,
                         sourceMap: shouldUseSourceMap,
+                        modules: true,
+                        localIdentName: '[name]_[local]_[hash:base64:5]'
                       },
                     },
                     {
@@ -218,25 +210,31 @@ module.exports = {
                             ],
                             flexbox: 'no-2009',
                           }),
+
                           postcssAspectRatioMini({}),
-                          postcssPxToViewport({
-                            viewportWidth: 750, // (Number) The width of the viewport.
-                            viewportHeight: 1334, // (Number) The height of the viewport.
-                            unitPrecision: 3, // (Number) The decimal numbers to allow the REM units to grow to.
-                            viewportUnit: 'vw', // (String) Expected units.
-                            selectorBlackList: ['.ignore', '.hairlines'], // (Array) The selectors to ignore and leave as px.
-                            minPixelValue: 1, // (Number) Set the minimum pixel value to replace.
-                            mediaQuery: false // (Boolean) Allow px to be converted in media queries.
+                          
+                          postcssPxToViewport({ 
+                            viewportWidth: 750, // (Number) The width of the viewport. 
+                            viewportHeight: 1334, // (Number) The height of the viewport. 
+                            unitPrecision: 3, // (Number) The decimal numbers to allow the REM units to grow to. 
+                            viewportUnit: 'vw', // (String) Expected units. 
+                            selectorBlackList: ['.ignore', '.hairlines'], // (Array) The selectors to ignore and leave as px. 
+                            minPixelValue: 1, // (Number) Set the minimum pixel value to replace. 
+                            mediaQuery: false // (Boolean) Allow px to be converted in media queries. 
                           }),
+
                           postcssWriteSvg({
                             utf8: false
                           }),
+
                           postcssCssnext({}),
+
                           postcssViewportUnits({}),
+
                           cssnano({
-                            // preset: "advanced",
-                            autoprefixer: false,
-                            "postcss-zindex": false
+                            preset: "advanced", 
+                            autoprefixer: false, 
+                            "postcss-zindex": false 
                           })
                         ],
                       },

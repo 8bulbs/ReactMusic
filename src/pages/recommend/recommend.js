@@ -4,7 +4,8 @@ export default class SongList extends Component {
   render () {
     return (
       <div>
-        <MusicCarousel />
+        推荐
+        {/* <MusicCarousel /> */}
       </div>
     )
   }
