@@ -5,7 +5,7 @@ export default class MusicSection extends Component {
   render () {
     return (
       <div className="section-root">
-        推荐歌单
+        {this.props.title}
       </div>
     )
   }

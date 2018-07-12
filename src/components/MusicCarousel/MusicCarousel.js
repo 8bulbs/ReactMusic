@@ -1,7 +1,26 @@
 import React from "react";
 import Slider from "react-slick";
 import './MusicCarousel.css'
+import { getBanner } from 'api/recommend.api'
 export default class MusicCarousel extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      bannerData: []
+    }
+  }
+
+  componentDidMount () {
+    this.getBannerList()
+  }
+
+  async getBannerList () {
+    let res = await getBanner()
+    this.setState({
+      bannerData: res.data.banners
+    })
+  }
+
   render() {
     var settings = {
       dots: true,
@@ -14,18 +33,14 @@ export default class MusicCarousel extends React.Component {
       autoplay:true,
       className: 'slider-div',
       // dotsClass: 'dots'
-    };
+    }
     return (
-      <Slider {...settings}>
-        <div className="slider-div">
-            <img className="slider-img" src="http://p1.music.126.net/bWK5Rvx_yPeo0ZP0ZeNiwg==/109951163400755976.jpg" />
-        </div>
-        <div className="slider-div">
-            <img className="slider-img" src="http://p1.music.126.net/Yw8_oWn1CiOWqcpRTkEzZw==/109951163399777585.jpg" />
-        </div>
-        <div className="slider-div">
-            <img className="slider-img" src="http://p1.music.126.net/kb_JSB1UJe62EXBuk80HRg==/109951163397825260.jpg" />
-        </div>
+      <Slider className="carousel-root" {...settings}>
+        {this.state.bannerData.map(v =>
+          (<div key={v} className="slider-div">
+              <img className="slider-img" src={v.picUrl} />
+          </div>))
+        }
       </Slider>
     )
   }

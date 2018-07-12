@@ -1,3 +1,5 @@
+import $ from 'api/axios.config'
+
 export function getBanner () {
-  const url = '/banner'
+  return $.get('/banner')
 }

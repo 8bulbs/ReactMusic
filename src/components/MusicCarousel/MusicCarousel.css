@@ -1,6 +1,9 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
+.carousel-root {
+  margin-bottom: 17px;
+}
 .slider-div,.slider-img {
   width: 375px;
   margin-top: 0;

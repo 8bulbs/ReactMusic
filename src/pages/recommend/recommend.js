@@ -6,7 +6,8 @@ export default class SongList extends Component {
     return (
       <div>
         <MusicCarousel />
-        <MusicSection />
+        <MusicSection title="推荐歌单" />
+        <MusicSection title="最新音乐"/>
       </div>
     )
   }
