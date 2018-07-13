@@ -50,8 +50,8 @@ class FullWidthTabs extends React.Component {
     const { classes, theme } = this.props;
 
     return (
-      <div className="music-tab-root">
-        <AppBar position="static" color="default">
+      <div className={classes.root}>
+        <AppBar className="music-tabs" color="default">
           <Tabs
             value={this.state.value}
             onChange={this.handleChange}

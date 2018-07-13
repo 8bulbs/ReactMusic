@@ -1,12 +1,18 @@
 .music-tab-root {
   width: 375px;
-  position: fixed;
-  top: 57px;
 }
-.music-tab{
+
+.music-tabs {
+  position: fixed;
+  top: 56px !important;
+  z-index: 1000;
+}
+
+.music-tab {
   color: #333 !important;
   font-size: 15px !important;
 }
+
 .MuiTypography-root-39 {
   padding: 0 !important;
 }

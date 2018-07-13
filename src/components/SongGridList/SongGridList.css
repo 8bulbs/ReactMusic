@@ -1,0 +1,8 @@
+.song-grid-list-root {
+  margin-top: 17px;
+  width: 375px;
+  /* height: 1373.75px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

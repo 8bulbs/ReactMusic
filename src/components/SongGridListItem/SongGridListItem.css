@@ -1,0 +1,29 @@
+.grid-list-item-root {
+  width: 124.88px;
+  height: 158.88px;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.grid-list-item-img {
+  width: 122.88px;
+  height: 122.88px;
+}
+
+.grid-list-item-count {
+  position: absolute;
+  right: 5px;
+  top: 2px;
+  color: white;
+  padding-left: 13px;
+  font-size: 12px;
+}
+
+.grid-list-item-text {
+  /* padding: 6px 2px 0 6px; */
+  height: 36px;
+  font-size: 13px;
+  line-height: 1.2;
+  margin: 0;
+}

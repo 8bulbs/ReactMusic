@@ -2,8 +2,8 @@
 
 .app-bar-root {
   width: 375px;
-  overflow: hidden;
   position: fixed;
+  z-index: 1000;
 }
 .app-bar {
   background-color:#d43c33 !important;

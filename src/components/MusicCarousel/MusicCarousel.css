@@ -3,17 +3,22 @@
 
 .carousel-root {
   margin-bottom: 17px;
+  height: 173px;
 }
+
 .slider-div,.slider-img {
   width: 375px;
   margin-top: 0;
 }
+
 .slick-dots {
   bottom: 15px !important;
 }
+
 .slick-dots li.slick-active button:before {
   color: white !important;
 }
+
 .slick-dots li button:before {
   color: gray !important;
 }

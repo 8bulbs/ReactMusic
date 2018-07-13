@@ -30,6 +30,7 @@ axios.interceptors.response.use(
     }
     const statusCode = err.response.status
     const statusCodeMap = {
+      301: '永久重定向',
       400: '请求语法错误',
       401: '未授权',
       403: '禁止访问',
