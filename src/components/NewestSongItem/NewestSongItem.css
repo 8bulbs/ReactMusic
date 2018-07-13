@@ -1,0 +1,47 @@
+.newest-song-item-root {
+  padding-left: 15px;
+  position: relative;
+}
+
+.newest-song-list-item {
+  border-bottom: 1px solid #eee !important;
+  padding-left: 0 !important;
+}
+
+.newest-song-item-content {
+  width: 375px;
+}
+
+.newest-song-item-name {
+  font-size: 17px;
+  width: 323px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: normal;
+}
+
+.newest-song-item-singer {
+  color: #888;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: normal;
+}
+
+.newest-song-item-play {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  width: 22px;
+  height: 22px;
+}
+
+.newest-song-item-sq {
+  display: inline-block;
+  width: 12px;
+  height: 8px;
+  margin-right: 4px;
+}

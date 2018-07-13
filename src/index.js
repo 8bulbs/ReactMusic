@@ -6,9 +6,9 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
-import { counter } from './store/index.redux'
+import { playListManager } from './store/player.redux'
 
-const store = createStore(counter, compose(
+const store = createStore(playListManager, compose(
   applyMiddleware(thunk),
   window.devToolsExtension ? window.devToolsExtension() : f => f
 ))

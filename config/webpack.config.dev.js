@@ -101,7 +101,8 @@ module.exports = {
       'styles': resolve('src/assets/styles'),
       'components': resolve('src/components'),
       'api': resolve('src/api'),
-      'libs': resolve('src/libs')
+      'libs': resolve('src/libs'),
+      'store': resolve('src/store')
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).

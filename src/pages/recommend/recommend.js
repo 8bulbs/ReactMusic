@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import './recommend.css'
 import MusicCarousel from 'components/MusicCarousel/MusicCarousel'
 import MusicSection from 'components/MusicSection/MusicSection'
 import SongGridList from 'components/SongGridList/SongGridList'
-import './recommend.css'
+import NewestSongList from 'components/NewestSongList/NewestSongList'
 export default class SongList extends Component {
   render () {
     return (
@@ -11,6 +12,7 @@ export default class SongList extends Component {
         <MusicSection title="推荐歌单" />
         <SongGridList />
         <MusicSection title="最新音乐"/>
+        <NewestSongList />
       </div>
     )
   }

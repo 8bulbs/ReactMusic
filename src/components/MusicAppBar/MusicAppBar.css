@@ -6,9 +6,11 @@
   z-index: 1000;
 }
 .app-bar {
+  width: 375px !important;
   background-color:#d43c33 !important;
 }
 .app-bar-tool-bar {
+  width: 375px;
   justify-content: center;
   flex-wrap: nowrap
 }

@@ -12,11 +12,9 @@ export default class SongGridList extends React.Component {
     }
   }
 
-  // 组件挂载后获取数据
   componentDidMount () {
     let recommendSongListData = getLocal('recommendSongListData')
     if (recommendSongListData) {
-      console.log('recommendSongListData', recommendSongListData)
       this.setState({
         recommendSongListData
       })

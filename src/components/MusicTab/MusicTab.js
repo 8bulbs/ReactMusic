@@ -70,8 +70,9 @@ class FullWidthTabs extends React.Component {
           index={this.state.value}
           onChangeIndex={this.handleChangeIndex}
           disabled={true}
+          className="swipeable-views"
         >
-          <TabContainer dir={theme.direction}>
+          <TabContainer className="music-tab-view-container" dir={theme.direction}>
             <Recommend />
           </TabContainer>
           <TabContainer dir={theme.direction}>
