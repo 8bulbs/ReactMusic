@@ -2,7 +2,7 @@
 > a music player hacked by react + redux + prop-types + ssr + material-ui + vw adjust + eslint + stylus
 # run
 ```bash
-  $ git clone https://github.com/8bulbs/ReactMusic.git
+  $ git clone https://github.com/8bulbs/react-music.git
   $ cd react-music
   $ cd api-server
   $ npm i
