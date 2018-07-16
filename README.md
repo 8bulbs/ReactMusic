@@ -3,7 +3,7 @@
 # run
 ```bash
   $ git clone https://github.com/8bulbs/ReactMusic.git
-  $ cd ReactMusic
+  $ cd react-music
   $ cd api-server
   $ npm i
   $ node app
