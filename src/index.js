@@ -15,7 +15,7 @@ const store = createStore(playListManager, compose(
 
 ReactDOM.render(
   (<Provider store={store}>
-    <App />
+      <App />
   </Provider>)
   , document.getElementById('root'));
 registerServiceWorker();
