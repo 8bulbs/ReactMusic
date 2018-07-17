@@ -3,7 +3,7 @@ import ListItem from '@material-ui/core/ListItem'
 import './NewestSongItem.css'
 import bgImg from 'images/icon-spirits.png'
 import { connect } from 'react-redux'
-import { addToPlayList, audioPlay } from 'store/player.redux'
+import { addToPlayList, audioPlay } from 'reducer/player.redux'
 
 const bgImgPlayStyle = {
   backgroundImage: `url(${bgImg})`,
@@ -19,7 +19,7 @@ const bgImgSQStyle = {
 }
 
 @connect(
-  state => ({playlist: state}),
+  state => ({playlist: state.playerReducer}),
   { addToPlayList, audioPlay }
 )
 export default class NewestSongItem extends React.Component {

@@ -1,5 +1,5 @@
 # ReactMusic
-> a music player hacked by react + redux + prop-types + ssr + material-ui + vw adjust + eslint + stylus
+> a music player hacked by react + redux + material-ui + vw adjust + eslint
 # run
 ```bash
   $ git clone https://github.com/8bulbs/react-music.git

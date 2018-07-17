@@ -1,6 +1,6 @@
 const PLAYER = new Audio()
 
-const INIT_State = {
+const INIT_STATE = {
   playlist: [],
   isPlay: false,
   isMini: false
@@ -22,7 +22,7 @@ function handleAudioPlay (state, PLAYER) {
   }, 700)
 }
 
-export function playListManager (state = INIT_State, action) {
+export function playListReducer (state = INIT_STATE, action) {
   switch (action.type) {
     case ADD_TO_PLAYLIST:
       console.log('redux1', action.payload)

@@ -1,0 +1,19 @@
+.header-root {
+  position: fixed;
+  z-index: 1000;
+  height: 57px;
+  width: 375px;
+  display: flex;
+  justify-content: space-around;
+  background: #d43c33;
+}
+
+.header-root>.title {
+  padding-left: 15px;
+  height: 57px;
+  line-height: 57px;
+  width: 200px;
+  color: #fff;
+  font-size: 21px;
+  background-size: 21px 21px
+}

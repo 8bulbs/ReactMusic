@@ -102,7 +102,7 @@ module.exports = {
       'components': resolve('src/components'),
       'api': resolve('src/api'),
       'libs': resolve('src/libs'),
-      'store': resolve('src/store')
+      'reducer': resolve('src/reducer')
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).

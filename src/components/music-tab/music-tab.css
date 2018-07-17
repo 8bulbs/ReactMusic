@@ -1,0 +1,12 @@
+.music-tab-root {
+  position: fixed;
+  z-index: 1000;
+  top: 57px;
+  width: 375px;
+  height: 57px;
+  display: flex;
+}
+
+.music-tab-item {
+  color: #d33a31;
+}
