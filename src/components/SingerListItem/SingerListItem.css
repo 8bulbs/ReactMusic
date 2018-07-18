@@ -1,0 +1,22 @@
+.singer-item-container{
+  padding-left : 3px;
+}
+.singer-item-container img{
+  display: block;
+  width: 98.88px;
+  height: 98.88px;
+  border-radius : 3px;
+}
+.singer-item-container p{
+  text-align : left;
+}
+.singer-item-container a{
+  display: inline-block;
+  text-decoration: none;
+  color : #000000;
+  width : 98.88px;
+}
+.singer-item-container a:hover{
+  color : red;
+  text-decoration: #d33a31;
+}

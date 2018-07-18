@@ -7,8 +7,7 @@ export default class SongList extends Component {
   render () {
     return (
       <div>
-        歌单
-        <MusicLoading />        
+        歌单2222
       </div>
     )
   }
