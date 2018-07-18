@@ -11,6 +11,9 @@
   $ npm i
   $ npm start
  ```
+ > dev-server: localhost://3005
+ > api-server: localhost://3007
+
 # thanks to
 > Binaryify/NeteaseCloudMusicApi
 > https://github.com/Binaryify/NeteaseCloudMusicApi
