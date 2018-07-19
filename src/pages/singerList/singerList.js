@@ -22,7 +22,6 @@ export default class SongList extends Component {
     let hotSingerData = getLocal('hotSingerData')
     let recommendSingerData = getLocal('recommendSingerData')
     let singerTopListData = getLocal('singerTopListData')
-    console.log(hotSingerData)
     let array = [
       {
         data: hotSingerData,
@@ -45,10 +44,10 @@ export default class SongList extends Component {
     ];
     array.map(item => {
       if (item.data) {
-        let obj = {};
-        console.log(item.data)
-        obj.dataName = item.data
-        console.log(obj)
+        var obj = {}
+        var dataName = item.dataName
+        var data = item.data 
+        obj[dataName] = data
         this.setState(obj)
       }
       else {
@@ -70,7 +69,6 @@ export default class SongList extends Component {
           obj[dataName] = res.data.artists
           break
       }
-      // obj[dataName] = res.data.artists
       setLocal(localName, obj[dataName])
       this.setState(obj)
     }

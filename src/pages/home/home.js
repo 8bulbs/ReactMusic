@@ -13,7 +13,7 @@ export default class Home extends Component {
   }
 
   componentWillMount () {
-    // this._loginByPhone()
+    this._loginByPhone()
   }
 
   async _loginByPhone () {
